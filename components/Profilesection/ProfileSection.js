@@ -11,6 +11,7 @@ function ProfileSection(props) {
     <Box p={2} sx={{ backgroundColor: "#f5f5f5" }}>
       <Grid
         fluid
+        container
         spacing={1}
         xs={12}
         sx={{
@@ -18,11 +19,11 @@ function ProfileSection(props) {
           justifyContent: "center",
           alignItems: "center",
           mt: "2rem",
+          ml: "0",
         }}
       >
         <Grid
           item
-          container
           className="avatar-section"
           sx={{
             justifyContent: "center",
@@ -42,22 +43,54 @@ function ProfileSection(props) {
             }}
           />
 
-          <Typography variant={"body1"}>
+          <Typography variant={"body1"} sx={{ mt: "2rem" }}>
             <b>{props.userName.toUpperCase()}</b>
           </Typography>
         </Grid>
 
         <Grid
-        xs={3}
-          fluid
+          container
           className="profile-follow-section"
-          sx={{ flexDirection: "row", justifyContent: "center", mt: "2rem" }}
+          sx={{
+            flexDirection: "row",
+            justifyContent: "space-around",
+            mt: "2rem",
+            gap: "2rem",
+            ml: "0",
+          }}
         >
-          <Grid item sx={{ textAlign: "center" }}>
+          <Grid item fluid sx={{ textAlign: "center" }}>
             <Typography variant={"h5"}>
               <b>{props.likes}</b>
             </Typography>
-            <Typography variant={"subtitle1"}>POSTS</Typography>
+            <Typography
+              variant={"subtitle2"}
+              sx={{ fontSize: "0.8rem", width: "100px" }}
+            >
+              POSTS
+            </Typography>
+          </Grid>
+          <Grid item fluid sx={{ textAlign: "center" }}>
+            <Typography variant={"h5"}>
+              <b>{props.likes}</b>
+            </Typography>
+            <Typography
+              variant={"subtitle2"}
+              sx={{ fontSize: "0.8rem", width: "100px" }}
+            >
+              FOLLOWING
+            </Typography>
+          </Grid>
+          <Grid item fluid sx={{ textAlign: "center" }}>
+            <Typography variant={"h5"}>
+              <b>{props.likes}</b>
+            </Typography>
+            <Typography
+              variant={"subtitle2"}
+              sx={{ fontSize: "0.8rem", width: "100px" }}
+            >
+              FOLLOWERS
+            </Typography>
           </Grid>
         </Grid>
       </Grid>

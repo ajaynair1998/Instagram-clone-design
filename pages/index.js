@@ -36,7 +36,7 @@ export default function Home() {
           <Box className="main-page">
             <Grid container spacing={1} className="top-page-grid">
               <Grid item xs={3} className="profile-section">
-                <ProfileSection  />
+                <ProfileSection />
               </Grid>
             </Grid>
           </Box>
