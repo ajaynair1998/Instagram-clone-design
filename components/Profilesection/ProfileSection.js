@@ -7,8 +7,8 @@ import { Typography } from "@mui/material";
 import randomData from "../../libs/randomData.json";
 import Divider from "@mui/material/Divider";
 import { Button } from "@mui/material";
-import { Hidden } from "@mui/material";
-import { useTheme } from "@emotion/react";
+
+
 
 // ICONS
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -24,7 +24,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import SendIcon from "@mui/icons-material/Send";
 
 function ProfileSection(props) {
-  const theme = useTheme();
+
   return (
     <Box
       p={2}

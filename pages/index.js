@@ -3,6 +3,7 @@ import api from "../libs/api";
 import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
 import ProfileSection from "../components/Profilesection/ProfileSection";
+import PersonSection from "../components/Personsection/PersonSection";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/system";
@@ -29,7 +30,7 @@ export default function Home() {
   // }, []);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} >
       <div>
         <Head>
           <title>Create Next App</title>
@@ -44,6 +45,9 @@ export default function Home() {
             <Grid container spacing={1} className="top-page-grid">
               <Grid item xs={12} md={6} sm ={6} lg={3} className="profile-section">
                 <ProfileSection />
+              </Grid>
+              <Grid item xs={12} md={6} sm ={6} lg={3} className="profile-section">
+                <PersonSection />
               </Grid>
             </Grid>
           </Box>
