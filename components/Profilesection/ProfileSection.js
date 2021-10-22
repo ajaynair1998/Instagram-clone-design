@@ -5,6 +5,20 @@ import { Container } from "@mui/material";
 import { Avatar } from "@mui/material";
 import { Typography } from "@mui/material";
 import randomData from "../../libs/randomData.json";
+import Divider from "@mui/material/Divider";
+import { Button } from "@mui/material";
+import { Hidden } from "@mui/material";
+
+// ICONS
+import WhatshotIcon from '@mui/icons-material/Whatshot';
+import HomeIcon from "@mui/icons-material/Home";
+import SearchIcon from "@mui/icons-material/Search";
+import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
+import PeopleIcon from "@mui/icons-material/People";
+import People from "@mui/icons-material/People";
+import PrimarySearchAppBar from "../Navbar/Navbar";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import SendIcon from '@mui/icons-material/Send';
 
 function ProfileSection(props) {
   return (
@@ -13,7 +27,6 @@ function ProfileSection(props) {
         fluid
         container
         spacing={1}
-        xs={12}
         sx={{
           flexDirection: "column",
           justifyContent: "center",
@@ -59,6 +72,9 @@ function ProfileSection(props) {
             ml: "0",
           }}
         >
+          <Container sx={{ mt: "2rem" }} className="divider-profile-section">
+            <Divider variant="fullWidth" />
+          </Container>
           <Grid item fluid sx={{ textAlign: "center" }}>
             <Typography variant={"h5"}>
               <b>{props.likes}</b>
@@ -93,6 +109,153 @@ function ProfileSection(props) {
             </Typography>
           </Grid>
         </Grid>
+        <Container sx={{ mt: "2rem" }} className="divider-profile-section">
+          <Divider variant="fullWidth" />
+        </Container>
+
+        <Box
+          container
+          fluid
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            justifySelf: "flex-start",
+            width: "100%",
+            gap: "10%",
+            mt: "1rem",
+            pl: "1rem",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            fluid
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              justifySelf: "flex-start",
+              width: "100%",
+              gap: "10%",
+              mt: "1rem",
+              pl: "1rem",
+              alignItems: "center",
+            }}
+            className="feed-button"
+          >
+            <HomeIcon variant="subtitle1" sx={{}} />
+            <Typography variant="subtitle1">Feed</Typography>
+          </Box>
+          <Box
+            fluid
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              justifySelf: "flex-start",
+              width: "100%",
+              gap: "10%",
+              mt: "1rem",
+              pl: "1rem",
+              alignItems: "center",
+            }}
+            className="explore-button"
+          >
+            <SearchIcon variant="subtitle1" sx={{}} />
+            <Typography>Explore</Typography>
+          </Box>
+          <Box
+            fluid
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              justifySelf: "flex-start",
+              width: "100%",
+              gap: "10%",
+              mt: "1rem",
+              pl: "1rem",
+              alignItems: "center",
+            }}
+            className="feed-button"
+          >
+            <WhatshotIcon/>
+            <Typography variant="subtitle1">Trending Tags</Typography>
+          </Box>
+          <Box
+            fluid
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              justifySelf: "flex-start",
+              width: "100%",
+              gap: "10%",
+              mt: "1rem",
+              pl: "1rem",
+              alignItems: "center",
+            }}
+            className="feed-button"
+          >
+            <AutoFixHighIcon />
+            <Typography>Top Posts</Typography>
+          </Box>
+          <Box
+            fluid
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              justifySelf: "flex-start",
+              width: "100%",
+              gap: "10%",
+              mt: "1rem",
+              pl: "1rem",
+              alignItems: "center",
+            }}
+            className="feed-button"
+          >
+            <People />
+
+            <Typography>People</Typography>
+          </Box>
+          <Box
+            fluid
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              justifySelf: "flex-start",
+              width: "100%",
+              gap: "10%",
+              mt: "1rem",
+              pl: "1rem",
+              alignItems: "center",
+            }}
+            className="feed-button"
+          >
+            <NotificationsIcon/>
+            <Typography>Notifications</Typography>
+          </Box>
+          <Box
+            fluid
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              justifySelf: "flex-start",
+              width: "100%",
+              gap: "10%",
+              mt: "1rem",
+              pl: "1rem",
+              alignItems: "center",
+            }}
+            className="feed-button"
+          >
+            <SendIcon/>
+            <Typography>Direct</Typography>
+          </Box>
+        </Box>
       </Grid>
     </Box>
   );

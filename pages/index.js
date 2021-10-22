@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import api from "../libs/api";
 import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
 import ProfileSection from "../components/Profilesection/ProfileSection";
@@ -8,6 +9,8 @@ import { Box } from "@mui/system";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import Paper from "@mui/material/Paper";
+
+import { useEffect } from "react";
 
 let theme = createTheme({
   palette: {
@@ -21,6 +24,10 @@ let theme = createTheme({
 });
 
 export default function Home() {
+  // useEffect(async () => {
+  //   await api();
+  // }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <div>
