@@ -10,7 +10,9 @@ import { Button } from "@mui/material";
 import { Hidden } from "@mui/material";
 
 // ICONS
-import WhatshotIcon from '@mui/icons-material/Whatshot';
+import SettingsIcon from '@mui/icons-material/Settings';
+import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import WhatshotIcon from "@mui/icons-material/Whatshot";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
@@ -18,7 +20,7 @@ import PeopleIcon from "@mui/icons-material/People";
 import People from "@mui/icons-material/People";
 import PrimarySearchAppBar from "../Navbar/Navbar";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from "@mui/icons-material/Send";
 
 function ProfileSection(props) {
   return (
@@ -177,9 +179,9 @@ function ProfileSection(props) {
               pl: "1rem",
               alignItems: "center",
             }}
-            className="feed-button"
+            className="trending-button"
           >
-            <WhatshotIcon/>
+            <WhatshotIcon />
             <Typography variant="subtitle1">Trending Tags</Typography>
           </Box>
           <Box
@@ -195,7 +197,7 @@ function ProfileSection(props) {
               pl: "1rem",
               alignItems: "center",
             }}
-            className="feed-button"
+            className="top-posts-button"
           >
             <AutoFixHighIcon />
             <Typography>Top Posts</Typography>
@@ -213,7 +215,7 @@ function ProfileSection(props) {
               pl: "1rem",
               alignItems: "center",
             }}
-            className="feed-button"
+            className="people-button"
           >
             <People />
 
@@ -232,9 +234,9 @@ function ProfileSection(props) {
               pl: "1rem",
               alignItems: "center",
             }}
-            className="feed-button"
+            className="notifications-button"
           >
-            <NotificationsIcon/>
+            <NotificationsIcon />
             <Typography>Notifications</Typography>
           </Box>
           <Box
@@ -250,11 +252,42 @@ function ProfileSection(props) {
               pl: "1rem",
               alignItems: "center",
             }}
-            className="feed-button"
+            className="direct-button"
           >
-            <SendIcon/>
+            <SendIcon />
             <Typography>Direct</Typography>
           </Box>
+           <Box
+            fluid
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              justifySelf: "flex-start",
+              width: "100%",
+              gap: "10%",
+              mt: "1rem",
+              pl: "1rem",
+              alignItems: "center",
+            }}
+            className="stats-button"
+          >
+            <QueryStatsIcon />
+            <Typography>Stats</Typography>
+          </Box>
+        </Box>
+        <Box sx={{
+          display:"flex",
+          justifyContent:"space-between",
+          width:"60%",
+          mt:"2rem"
+        }}>
+          <Button variant="contained" size="large" disableElevation >
+            <SettingsIcon />
+        </Button>
+        <Button variant="contained" size="large" disableElevation>
+          <PeopleIcon/>
+        </Button>
         </Box>
       </Grid>
     </Box>
