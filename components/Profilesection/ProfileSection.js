@@ -8,10 +8,11 @@ import randomData from "../../libs/randomData.json";
 import Divider from "@mui/material/Divider";
 import { Button } from "@mui/material";
 import { Hidden } from "@mui/material";
+import { useTheme } from "@emotion/react";
 
 // ICONS
-import SettingsIcon from '@mui/icons-material/Settings';
-import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import SettingsIcon from "@mui/icons-material/Settings";
+import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
@@ -23,8 +24,13 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import SendIcon from "@mui/icons-material/Send";
 
 function ProfileSection(props) {
+  const theme = useTheme();
   return (
-    <Box p={2} sx={{ backgroundColor: "#f5f5f5" }}>
+    <Box
+      p={2}
+      sx={{ backgroundColor: "#f5f5f5",height:"58rem" }}
+     
+    >
       <Grid
         fluid
         container
@@ -62,50 +68,51 @@ function ProfileSection(props) {
             <b>{props.userName.toUpperCase()}</b>
           </Typography>
         </Grid>
-
+        <Container sx={{ mt: "2rem" }} className="divider-profile-section">
+          <Divider variant="fullWidth" />
+        </Container>
         <Grid
           container
           className="profile-follow-section"
           sx={{
             flexDirection: "row",
-            justifyContent: "space-around",
+            justifyContent: "space-between",
             mt: "2rem",
             gap: "2rem",
             ml: "0",
+            width: "90%",
+            flexWrap: "wrap-reverse",
           }}
         >
-          <Container sx={{ mt: "2rem" }} className="divider-profile-section">
-            <Divider variant="fullWidth" />
-          </Container>
-          <Grid item fluid sx={{ textAlign: "center" }}>
+          <Grid item fluid sx={{ textAlign: "center", margin: "auto" }}>
             <Typography variant={"h5"}>
               <b>{props.likes}</b>
             </Typography>
             <Typography
               variant={"subtitle2"}
-              sx={{ fontSize: "0.8rem", width: "100px" }}
+              sx={{ fontSize: "0.5rem", width: "50px" }}
             >
               POSTS
             </Typography>
           </Grid>
-          <Grid item fluid sx={{ textAlign: "center" }}>
+          <Grid item fluid sx={{ textAlign: "center", margin: "auto" }}>
             <Typography variant={"h5"}>
               <b>{props.likes}</b>
             </Typography>
             <Typography
               variant={"subtitle2"}
-              sx={{ fontSize: "0.8rem", width: "100px" }}
+              sx={{ fontSize: "0.5rem", width: "50px" }}
             >
               FOLLOWING
             </Typography>
           </Grid>
-          <Grid item fluid sx={{ textAlign: "center" }}>
+          <Grid item fluid sx={{ textAlign: "center", margin: "auto" }}>
             <Typography variant={"h5"}>
               <b>{props.likes}</b>
             </Typography>
             <Typography
               variant={"subtitle2"}
-              sx={{ fontSize: "0.8rem", width: "100px" }}
+              sx={{ fontSize: "0.5rem", width: "50px" }}
             >
               FOLLOWERS
             </Typography>
@@ -257,7 +264,7 @@ function ProfileSection(props) {
             <SendIcon />
             <Typography>Direct</Typography>
           </Box>
-           <Box
+          <Box
             fluid
             sx={{
               display: "flex",
@@ -276,18 +283,20 @@ function ProfileSection(props) {
             <Typography>Stats</Typography>
           </Box>
         </Box>
-        <Box sx={{
-          display:"flex",
-          justifyContent:"space-between",
-          width:"60%",
-          mt:"2rem"
-        }}>
-          <Button variant="contained" size="large" disableElevation >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "60%",
+            mt: "7rem",
+          }}
+        >
+          <Button variant="contained" size="large" disableElevation>
             <SettingsIcon />
-        </Button>
-        <Button variant="contained" size="large" disableElevation>
-          <PeopleIcon/>
-        </Button>
+          </Button>
+          <Button variant="contained" size="large" disableElevation>
+            <PeopleIcon />
+          </Button>
         </Box>
       </Grid>
     </Box>
