@@ -27,7 +27,7 @@ export default function SearchSection(props) {
   console.log(selectedPerson);
   return (
     <Box>
-      <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+      <List sx={{ width: "100%", bgcolor: "background.paper",maxHeight:"60rem",overflow:"auto" }}>
         {props.data.map((item) => {
           return item.user.name == selectedPerson ? (
             <ListItem
@@ -86,7 +86,7 @@ export default function SearchSection(props) {
 
 const returnTenRandomData = (randomData) => {
   let tenRandomData = [];
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 15; i++) {
     tenRandomData.push(randomData[i]);
   }
   return tenRandomData;

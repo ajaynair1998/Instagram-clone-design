@@ -19,7 +19,7 @@ export default function PersonSection(props) {
   return (
 <Box sx={{ background: "#fff" }} p={3}>
 
-      <Button variant="text" sx={{ pl: "0" }}>
+      <Button variant="text" sx={{ pl: "0" }} onClick={props.changeToSearchSection}>
         <Typography color="black">{"<-"} Back to people</Typography>{" "}
       </Button>
       <Grid className="image-container" sx={{ mt: "2rem" }}>

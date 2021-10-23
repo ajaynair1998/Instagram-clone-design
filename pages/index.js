@@ -41,6 +41,10 @@ export default function Home() {
 
   }
 
+  const changeToSearchSection=()=>{
+      setSearching(true)
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <div>
@@ -75,7 +79,7 @@ export default function Home() {
                   lg={3}
                   className="person-section"
                 >
-                  <PersonSection />
+                  <PersonSection changeToSearchSection={changeToSearchSection}/>
                 </Grid>
               )}
               {isSearching && !isLoading && (
