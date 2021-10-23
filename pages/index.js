@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import api from "../libs/api";
+
 import getProfilesByName from "../libs/searchApi";
 import randomData from "../libs/randomData.json";
 import Head from "next/head";
@@ -12,8 +12,6 @@ import SearchSection from "../components/SearchSection/SearchSection";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { Grid } from "@mui/material";
-import { Typography } from "@mui/material";
-
 import { useEffect, useState } from "react";
 
 let theme = createTheme({
@@ -36,7 +34,6 @@ let getRandomTenData = () => {
 };
 
 let filterOutUsersWithoutName = (users) => {
-  console.log(users);
   let filtered = users.filter((item) => (item.name ? true : false));
   return filtered;
 };
@@ -52,7 +49,6 @@ export default function Home() {
     let users = await getProfilesByName(searchTerm);
     users = filterOutUsersWithoutName(users.response.results);
     foundPeople(users);
-    console.log(users);
     setLoading(false);
   }, [searchTerm]);
 

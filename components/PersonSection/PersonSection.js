@@ -1,22 +1,17 @@
 import React from "react";
-import { Box, typography } from "@mui/system";
+import { Box} from "@mui/system";
 import { Grid } from "@mui/material";
-import { Container } from "@mui/material";
 import { Avatar } from "@mui/material";
 import { Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import { Button } from "@mui/material";
-import { Hidden } from "@mui/material";
-import { useTheme } from "@emotion/react";
-import { createTheme, ThemeProvider } from "@mui/system";
-import { createStyles, makeStyles } from "@mui/styles";
+
 
 import VerifiedIcon from "@mui/icons-material/Verified";
 
 import randomData from "../../libs/randomData.json";
 
 export default function PersonSection(props) {
-  console.log(props);
   return (
     <Box sx={{ background: "#fff" }} p={3}>
       <Button
@@ -30,7 +25,9 @@ export default function PersonSection(props) {
         <Grid item md={3} xs={5} sm={5}>
           <Avatar
             variant="rounded"
-            src={props.profile.photos ? props.profile.photos[0]?.urls?.regular : ""}
+            src={
+              props.profile.photos ? props.profile.photos[0]?.urls?.regular : ""
+            }
             sx={{ height: "250px", width: "250px", mx: "auto" }}
           />
         </Grid>

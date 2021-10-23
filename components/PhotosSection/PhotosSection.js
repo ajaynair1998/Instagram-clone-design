@@ -1,18 +1,7 @@
 import React from "react";
-import { Box, typography } from "@mui/system";
-import { Grid } from "@mui/material";
-import { Container } from "@mui/material";
+import { Box } from "@mui/system";
 import { Avatar } from "@mui/material";
 import { Typography } from "@mui/material";
-import Divider from "@mui/material/Divider";
-import { Button } from "@mui/material";
-import { Hidden } from "@mui/material";
-import { useTheme } from "@emotion/react";
-import { createTheme, ThemeProvider } from "@mui/system";
-import { createStyles, makeStyles } from "@mui/styles";
-
-import VerifiedIcon from "@mui/icons-material/Verified";
-
 import randomData from "../../libs/randomData.json";
 
 export default function PhotosSection(props) {
@@ -29,7 +18,7 @@ export default function PhotosSection(props) {
           flexDirection: "row",
           justifyContent: "flex-start",
           mt: "1rem",
-          flexWrap:"wrap"
+          flexWrap: "wrap",
         }}
       >
         {props.featuredStories.map((item) => {
@@ -37,7 +26,7 @@ export default function PhotosSection(props) {
             <Avatar
               variant="rounded"
               src={item}
-              sx={{ height: "8rem", width: "8rem", mr: "1rem",mt:"1rem" }}
+              sx={{ height: "8rem", width: "8rem", mr: "1rem", mt: "1rem" }}
             />
           );
         })}
@@ -47,13 +36,13 @@ export default function PhotosSection(props) {
           <b>Photo Feed</b>
         </Typography>
       </Box>
-       <Box
+      <Box
         sx={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "flex-start",
           mt: "1rem",
-          flexWrap:"wrap"
+          flexWrap: "wrap",
         }}
       >
         {props.featuredStories.map((item) => {
@@ -61,11 +50,16 @@ export default function PhotosSection(props) {
             <Avatar
               variant="rounded"
               src={item}
-              sx={{ height: "10rem", width: "10rem", mr: "1rem",ml:"0",mt:"1rem" }}
+              sx={{
+                height: "10rem",
+                width: "10rem",
+                mr: "1rem",
+                ml: "0",
+                mt: "1rem",
+              }}
             />
           );
         })}
-        
       </Box>
     </Box>
   );
