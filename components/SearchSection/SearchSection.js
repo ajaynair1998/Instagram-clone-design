@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Box, typography } from "@mui/system";
 import { Grid } from "@mui/material";
 import { Container } from "@mui/material";
@@ -21,13 +22,40 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 import randomData from "../../libs/randomData.json";
 
 export default function SearchSection(props) {
-  console.log(props.data);
+  let [selectedPerson, selectPerson] = useState("");
+
+
+  console.log(selectedPerson);
   return (
-    <Box >
+    <Box>
       <List sx={{ width: "100%", bgcolor: "background.paper" }}>
         {props.data.map((item) => {
-          return (
-            <ListItem alignItems="flex-start">
+          return item.user.name == selectedPerson ? (
+            <ListItem alignItems="flex-start" sx={{ bgcolor: "primary.dark" }} onClick={()=>props.selectPerson(item)}>
+              <ListItemAvatar>
+                <Avatar alt={item.user.name} src={item.urls.thumb} />
+              </ListItemAvatar>
+              <ListItemText
+                primary={item.user.name}
+                secondary={
+                  <React.Fragment>
+                    <Typography
+                      sx={{ display: "inline" }}
+                      component="span"
+                      variant="body2"
+                      color="text.primary"
+                    ></Typography>
+                    {item.user.bio}
+                  </React.Fragment>
+                }
+              />
+            </ListItem>
+          ) : (
+            <ListItem
+              alignItems="flex-start"
+              onMouseOver={() => selectPerson(item.user.name)}
+              onClick={()=>props.selectPerson(item)}
+            >
               <ListItemAvatar>
                 <Avatar alt={item.user.name} src={item.urls.thumb} />
               </ListItemAvatar>
