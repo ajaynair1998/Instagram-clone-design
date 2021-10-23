@@ -2,16 +2,17 @@
 import api from "../libs/api";
 import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
-import ProfileSection from "../components/Profilesection/ProfileSection";
-import PersonSection from "../components/Personsection/PersonSection";
+import ProfileSection from "../components/ProfileSection/ProfileSection";
+import PersonSection from "../components/PersonSection/PersonSection";
 import PhotosSection from "../components/PhotosSection/PhotosSection";
+import SearchSection from '../components/SearchSection/SearchSection'
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 
 let theme = createTheme({
   palette: {
@@ -28,6 +29,8 @@ export default function Home() {
   // useEffect(async () => {
   //   await api();
   // }, []);
+  const [isLoading,setLoading]=useState(false)
+  const [isSearching,setSearching]=useState(true)
 
   return (
     <ThemeProvider theme={theme}>
@@ -53,20 +56,31 @@ export default function Home() {
               >
                 <ProfileSection />
               </Grid>
-              <Grid
+              
+                {!isSearching && !isLoading && <Grid
                 item
                 xs={12}
                 md={6}
                 sm={6}
                 lg={3}
                 className="person-section"
-              >
-                <PersonSection />
-              </Grid>
+              ><PersonSection />
+              </Grid>}
+                {isSearching && !isLoading &&<Grid
+                item
+                xs={12}
+                md={6}
+                sm={6}
+                lg={3}
+                className="person-section"
+              ><SearchSection />
+              </Grid>}
+              
               <Grid item xs={12} md={12} sm={12} lg={6}>
                 <PhotosSection />
               </Grid>
-            </Grid>
+              </Grid>
+           
           </Box>
         </main>
 
