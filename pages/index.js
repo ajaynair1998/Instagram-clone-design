@@ -4,12 +4,12 @@ import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
 import ProfileSection from "../components/Profilesection/ProfileSection";
 import PersonSection from "../components/Personsection/PersonSection";
+import PhotosSection from "../components/PhotosSection/PhotosSection";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
-import Paper from "@mui/material/Paper";
 
 import { useEffect } from "react";
 
@@ -30,7 +30,7 @@ export default function Home() {
   // }, []);
 
   return (
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <div>
         <Head>
           <title>Create Next App</title>
@@ -43,11 +43,28 @@ export default function Home() {
         <main>
           <Box className="main-page">
             <Grid container spacing={1} className="top-page-grid">
-              <Grid item xs={12} md={6} sm ={6} lg={3} className="profile-section">
+              <Grid
+                item
+                xs={12}
+                md={6}
+                sm={6}
+                lg={3}
+                className="profile-section"
+              >
                 <ProfileSection />
               </Grid>
-              <Grid item xs={12} md={6} sm ={6} lg={3} className="profile-section">
+              <Grid
+                item
+                xs={12}
+                md={6}
+                sm={6}
+                lg={3}
+                className="profile-section"
+              >
                 <PersonSection />
+              </Grid>
+              <Grid item xs={12} md={12} sm={12} lg={5.8}>
+                <PhotosSection />
               </Grid>
             </Grid>
           </Box>
