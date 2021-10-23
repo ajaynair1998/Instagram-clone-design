@@ -8,8 +8,6 @@ import randomData from "../../libs/randomData.json";
 import Divider from "@mui/material/Divider";
 import { Button } from "@mui/material";
 
-
-
 // ICONS
 import SettingsIcon from "@mui/icons-material/Settings";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
@@ -24,13 +22,8 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import SendIcon from "@mui/icons-material/Send";
 
 function ProfileSection(props) {
-
   return (
-    <Box
-      p={2}
-      sx={{ backgroundColor: "#f5f5f5",height:"60rem" }}
-     
-    >
+    <Box p={2} sx={{ backgroundColor: "#f5f5f5", height: "60rem" }}>
       <Grid
         fluid
         container

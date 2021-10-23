@@ -29,17 +29,17 @@ export default function SearchSection(props) {
     <Box>
       <List sx={{ width: "100%", bgcolor: "background.paper",maxHeight:"60rem",overflow:"auto" }}>
         {props.data.map((item) => {
-          return item.user.name == selectedPerson ? (
+          return item.name == selectedPerson ? (
             <ListItem
               alignItems="flex-start"
               sx={{ bgcolor: "primary.dark" }}
               onClick={() => props.selectPerson(item)}
             >
               <ListItemAvatar>
-                <Avatar alt={item.user.name} src={item.urls.thumb} />
+                <Avatar alt={item.name} src={item.urls?.thumb} />
               </ListItemAvatar>
               <ListItemText
-                primary={item.user.name}
+                primary={item.name }
                 secondary={
                   <React.Fragment>
                     <Typography
@@ -48,7 +48,7 @@ export default function SearchSection(props) {
                       variant="body2"
                       color="text.primary"
                     ></Typography>
-                    {item.user.bio}
+                    { item.bio }
                   </React.Fragment>
                 }
               />
@@ -56,14 +56,14 @@ export default function SearchSection(props) {
           ) : (
             <ListItem
               alignItems="flex-start"
-              onMouseOver={() => selectPerson(item.user.name)}
+              onMouseOver={() => selectPerson(item.name)}
               onClick={() => props.selectPerson(item) }
             >
               <ListItemAvatar>
-                <Avatar alt={item.user.name} src={item.urls.thumb} />
+                <Avatar alt={item.name } src={item.urls?.thumb} />
               </ListItemAvatar>
               <ListItemText
-                primary={item.user.name}
+                primary={item.name}
                 secondary={
                   <React.Fragment>
                     <Typography
@@ -72,7 +72,7 @@ export default function SearchSection(props) {
                       variant="body2"
                       color="text.primary"
                     ></Typography>
-                    {item.user.bio}
+                    {item.bio}
                   </React.Fragment>
                 }
               />
