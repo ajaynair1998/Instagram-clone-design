@@ -24,14 +24,17 @@ import randomData from "../../libs/randomData.json";
 export default function SearchSection(props) {
   let [selectedPerson, selectPerson] = useState("");
 
-
   console.log(selectedPerson);
   return (
     <Box>
       <List sx={{ width: "100%", bgcolor: "background.paper" }}>
         {props.data.map((item) => {
           return item.user.name == selectedPerson ? (
-            <ListItem alignItems="flex-start" sx={{ bgcolor: "primary.dark" }} onClick={()=>props.selectPerson(item)}>
+            <ListItem
+              alignItems="flex-start"
+              sx={{ bgcolor: "primary.dark" }}
+              onClick={() => props.selectPerson(item)}
+            >
               <ListItemAvatar>
                 <Avatar alt={item.user.name} src={item.urls.thumb} />
               </ListItemAvatar>
@@ -54,7 +57,7 @@ export default function SearchSection(props) {
             <ListItem
               alignItems="flex-start"
               onMouseOver={() => selectPerson(item.user.name)}
-              onClick={()=>props.selectPerson(item)}
+              onClick={() => props.selectPerson(item) }
             >
               <ListItemAvatar>
                 <Avatar alt={item.user.name} src={item.urls.thumb} />

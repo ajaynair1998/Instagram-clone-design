@@ -5,14 +5,15 @@ import Navbar from "../components/Navbar/Navbar";
 import ProfileSection from "../components/ProfileSection/ProfileSection";
 import PersonSection from "../components/PersonSection/PersonSection";
 import PhotosSection from "../components/PhotosSection/PhotosSection";
-import SearchSection from '../components/SearchSection/SearchSection'
+import SearchSection from "../components/SearchSection/SearchSection";
+import randomData from '../libs/randomData.json'
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
 let theme = createTheme({
   palette: {
@@ -29,8 +30,16 @@ export default function Home() {
   // useEffect(async () => {
   //   await api();
   // }, []);
-  const [isLoading,setLoading]=useState(false)
-  const [isSearching,setSearching]=useState(true)
+  const [isLoading, setLoading] = useState(false);
+  const [isSearching, setSearching] = useState(true);
+  const [selectedProfile,selectProfile]=useState(randomData[0])
+
+  const selectPerson=(item) =>{
+    selectProfile(item)
+    setLoading(false)
+    setSearching(false)
+
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -56,31 +65,36 @@ export default function Home() {
               >
                 <ProfileSection />
               </Grid>
-              
-                {!isSearching && !isLoading && <Grid
-                item
-                xs={12}
-                md={6}
-                sm={6}
-                lg={3}
-                className="person-section"
-              ><PersonSection />
-              </Grid>}
-                {isSearching && !isLoading &&<Grid
-                item
-                xs={12}
-                md={6}
-                sm={6}
-                lg={3}
-                className="person-section"
-              ><SearchSection />
-              </Grid>}
-              
+
+              {!isSearching && !isLoading && (
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                  sm={6}
+                  lg={3}
+                  className="person-section"
+                >
+                  <PersonSection />
+                </Grid>
+              )}
+              {isSearching && !isLoading && (
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                  sm={6}
+                  lg={3}
+                  className="person-section"
+                >
+                  <SearchSection setLoading={setLoading} selectPerson={selectPerson} />
+                </Grid>
+              )}
+
               <Grid item xs={12} md={12} sm={12} lg={6}>
                 <PhotosSection />
               </Grid>
-              </Grid>
-           
+            </Grid>
           </Box>
         </main>
 
