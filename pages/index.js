@@ -44,12 +44,12 @@ let filterOutUsersWithoutName = (users) => {
 export default function Home() {
   let [isLoading, setLoading] = useState(true);
   let [isSearching, setSearching] = useState(true);
-  let [selectedProfile, selectProfile] = useState(randomData[0]);
+  let [selectedProfile, selectProfile] = useState(randomData[1]);
   let [searchTerm, setSearchTerm] = useState("random");
   let [people, foundPeople] = useState(getRandomTenData());
 
   useEffect(async () => {
-    // let users = await getProfilesByName(searchTerm);
+    let users = await getProfilesByName(searchTerm);
     users = filterOutUsersWithoutName(users.response.results);
     foundPeople(users);
     console.log(users);
@@ -106,7 +106,7 @@ export default function Home() {
                 >
                   <PersonSection
                     changeToSearchSection={changeToSearchSection}
-                    // profile={profile}
+                    profile={selectedProfile}
                   />
                 </Grid>
               )}

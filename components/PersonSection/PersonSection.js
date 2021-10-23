@@ -16,24 +16,28 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 import randomData from "../../libs/randomData.json";
 
 export default function PersonSection(props) {
+  console.log(props);
   return (
-<Box sx={{ background: "#fff" }} p={3}>
-
-      <Button variant="text" sx={{ pl: "0" }} onClick={props.changeToSearchSection}>
+    <Box sx={{ background: "#fff" }} p={3}>
+      <Button
+        variant="text"
+        sx={{ pl: "0" }}
+        onClick={props.changeToSearchSection}
+      >
         <Typography color="black">{"<-"} Back to people</Typography>{" "}
       </Button>
       <Grid className="image-container" sx={{ mt: "2rem" }}>
         <Grid item md={3} xs={5} sm={5}>
           <Avatar
             variant="rounded"
-            src={props.profilePhoto}
+            src={props.profile.photos ? props.profile.photos[0]?.urls?.regular : ""}
             sx={{ height: "250px", width: "250px", mx: "auto" }}
           />
         </Grid>
       </Grid>
       <Box direction="row" sx={{ justifyContent: "flex-start", mx: "auto" }}>
         <Typography variant={"h5"} sx={{ textAlign: "start", mt: "1rem" }}>
-          <b>{props.userName}</b>{" "}
+          <b>{props.profile.name}</b>{" "}
           <VerifiedIcon sx={{ color: "blue", mb: "-0.3rem" }} />
         </Typography>
       </Box>
@@ -47,7 +51,7 @@ export default function PersonSection(props) {
         }}
       >
         <Typography>
-          <b> {props.photos} Photos</b>
+          <b> {props.total_photos || props.photos} Photos</b>
         </Typography>
 
         <Typography>
@@ -126,8 +130,8 @@ let favouriteProfiles = (randomData) => {
   return thumbNails;
 };
 PersonSection.defaultProps = {
-  userName: randomData[1].user.instagram_username,
-  profilePhoto: randomData[1].urls.regular,
+  name: randomData[1].user.instagram_username,
+  // urls:{regular: randomData[1].urls.regular},
   photos: "500",
   followers: "3K",
   favouriteProfiles: favouriteProfiles(randomData),

@@ -27,7 +27,14 @@ export default function SearchSection(props) {
   console.log(selectedPerson);
   return (
     <Box>
-      <List sx={{ width: "100%", bgcolor: "background.paper",maxHeight:"60rem",overflow:"auto" }}>
+      <List
+        sx={{
+          width: "100%",
+          bgcolor: "background.paper",
+          maxHeight: "60rem",
+          overflow: "auto",
+        }}
+      >
         {props.data.map((item) => {
           return item.name == selectedPerson ? (
             <ListItem
@@ -36,10 +43,10 @@ export default function SearchSection(props) {
               onClick={() => props.selectPerson(item)}
             >
               <ListItemAvatar>
-                <Avatar alt={item.name} src={item.urls?.thumb} />
+                <Avatar alt={item.name} src={item.photos[0]?.urls?.thumb} />
               </ListItemAvatar>
               <ListItemText
-                primary={item.name }
+                primary={item.name}
                 secondary={
                   <React.Fragment>
                     <Typography
@@ -48,7 +55,7 @@ export default function SearchSection(props) {
                       variant="body2"
                       color="text.primary"
                     ></Typography>
-                    { item.bio }
+                    {item.bio}
                   </React.Fragment>
                 }
               />
@@ -57,10 +64,10 @@ export default function SearchSection(props) {
             <ListItem
               alignItems="flex-start"
               onMouseOver={() => selectPerson(item.name)}
-              onClick={() => props.selectPerson(item) }
+              onClick={() => props.selectPerson(item)}
             >
               <ListItemAvatar>
-                <Avatar alt={item.name } src={item.urls?.thumb} />
+                <Avatar alt={item.name} src={item.photos[0]?.urls?.thumb} />
               </ListItemAvatar>
               <ListItemText
                 primary={item.name}
