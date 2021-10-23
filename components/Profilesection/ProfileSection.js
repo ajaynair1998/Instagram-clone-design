@@ -28,7 +28,7 @@ function ProfileSection(props) {
   return (
     <Box
       p={2}
-      sx={{ backgroundColor: "#f5f5f5",height:"58rem" }}
+      sx={{ backgroundColor: "#f5f5f5",height:"60rem" }}
      
     >
       <Grid

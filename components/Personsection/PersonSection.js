@@ -17,11 +17,12 @@ import randomData from "../../libs/randomData.json";
 
 export default function PersonSection(props) {
   return (
-    <Box sx={{ backgroundColor: "#f5f5f5" }} p={2}>
-      <Button variant="text" sx={{pl:"0"}}>
-        <Typography color="black" >{"<-"} Back to people</Typography>{" "}
+<Box sx={{ background: "#fff" }} p={3}>
+
+      <Button variant="text" sx={{ pl: "0" }}>
+        <Typography color="black">{"<-"} Back to people</Typography>{" "}
       </Button>
-      <Grid className="image-container" sx={{mt:"2rem"}}>
+      <Grid className="image-container" sx={{ mt: "2rem" }}>
         <Grid item md={3} xs={5} sm={5}>
           <Avatar
             variant="rounded"

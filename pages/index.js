@@ -42,7 +42,7 @@ export default function Home() {
         {/*Main body start  */}
         <main>
           <Box className="main-page">
-            <Grid container spacing={1} className="top-page-grid">
+            <Grid container spacing={0} className="top-page-grid">
               <Grid
                 item
                 xs={12}
@@ -59,11 +59,11 @@ export default function Home() {
                 md={6}
                 sm={6}
                 lg={3}
-                className="profile-section"
+                className="person-section"
               >
                 <PersonSection />
               </Grid>
-              <Grid item xs={12} md={12} sm={12} lg={5.8}>
+              <Grid item xs={12} md={12} sm={12} lg={6}>
                 <PhotosSection />
               </Grid>
             </Grid>

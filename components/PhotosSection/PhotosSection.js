@@ -17,7 +17,7 @@ import randomData from "../../libs/randomData.json";
 
 export default function PhotosSection(props) {
   return (
-    <Box sx={{ backgroundColor: "#f5f5f5" }} p={3}>
+    <Box sx={{ backgroundColor: "#fff" }} p={3}>
       <Box sx={{ marginTop: "1rem" }}>
         <Typography variant="h6">
           <b>Featured Stories</b>
