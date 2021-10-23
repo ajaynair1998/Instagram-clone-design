@@ -18,7 +18,7 @@ import randomData from "../../libs/randomData.json";
 export default function PhotosSection(props) {
   return (
     <Box sx={{ backgroundColor: "#f5f5f5" }} p={3}>
-      <Box sx={{ height: "100%", backGroundColor: "black", marginTop: "1rem" }}>
+      <Box sx={{ marginTop: "1rem" }}>
         <Typography variant="h6">
           <b>Featured Stories</b>
         </Typography>
@@ -28,7 +28,8 @@ export default function PhotosSection(props) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "flex-start",
-          mt:"1rem"
+          mt: "1rem",
+          flexWrap:"wrap"
         }}
       >
         {props.featuredStories.map((item) => {
@@ -36,10 +37,35 @@ export default function PhotosSection(props) {
             <Avatar
               variant="rounded"
               src={item}
-              sx={{ height: "100px", width: "auto", mr: "auto" }}
+              sx={{ height: "8rem", width: "8rem", mr: "1rem",mt:"1rem" }}
             />
           );
         })}
+      </Box>
+      <Box sx={{ marginTop: "4rem" }}>
+        <Typography variant="h6">
+          <b>Photo Feed</b>
+        </Typography>
+      </Box>
+       <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "flex-start",
+          mt: "1rem",
+          flexWrap:"wrap"
+        }}
+      >
+        {props.featuredStories.map((item) => {
+          return (
+            <Avatar
+              variant="rounded"
+              src={item}
+              sx={{ height: "10rem", width: "10rem", mr: "1rem",ml:"0",mt:"1rem" }}
+            />
+          );
+        })}
+        
       </Box>
     </Box>
   );
