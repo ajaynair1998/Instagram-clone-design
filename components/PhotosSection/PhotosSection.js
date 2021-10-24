@@ -4,6 +4,7 @@ import { Avatar } from "@mui/material";
 import { Typography } from "@mui/material";
 import randomData from "../../libs/randomData.json";
 
+
 export default function PhotosSection(props) {
   return (
     <Box sx={{ backgroundColor: "#fff" }} p={3}>
@@ -24,8 +25,9 @@ export default function PhotosSection(props) {
         {props.featuredStories.map((item) => {
           return (
             <Avatar
+              key={item.id}
               variant="rounded"
-              src={item}
+              src={item.img}
               sx={{ height: "8rem", width: "8rem", mr: "1rem", mt: "1rem" }}
             />
           );
@@ -48,8 +50,9 @@ export default function PhotosSection(props) {
         {props.featuredStories.map((item) => {
           return (
             <Avatar
+              key={item.id}
               variant="rounded"
-              src={item}
+              src={item.img}
               sx={{
                 height: "10rem",
                 width: "10rem",
@@ -68,7 +71,7 @@ export default function PhotosSection(props) {
 let returnRandomStories = (randomData) => {
   let randomStories = [];
   for (let i = 5; i < 10; i++) {
-    randomStories.push(randomData[i].urls.regular);
+    randomStories.push({img:randomData[i].urls.regular,id:randomData[i].id});
   }
   return randomStories;
 };

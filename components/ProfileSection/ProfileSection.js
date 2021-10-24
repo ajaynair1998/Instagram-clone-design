@@ -25,7 +25,7 @@ function ProfileSection(props) {
   return (
     <Box p={2} sx={{ backgroundColor: "#f5f5f5", height: "60rem" }}>
       <Grid
-        fluid
+        
         container
         spacing={1}
         sx={{
@@ -77,7 +77,7 @@ function ProfileSection(props) {
             flexWrap: "wrap-reverse",
           }}
         >
-          <Grid item fluid sx={{ textAlign: "center", margin: "auto" }}>
+          <Grid item  sx={{ textAlign: "center", margin: "auto" }}>
             <Typography variant={"h5"}>
               <b>{props.likes}</b>
             </Typography>
@@ -88,7 +88,7 @@ function ProfileSection(props) {
               POSTS
             </Typography>
           </Grid>
-          <Grid item fluid sx={{ textAlign: "center", margin: "auto" }}>
+          <Grid item  sx={{ textAlign: "center", margin: "auto" }}>
             <Typography variant={"h5"}>
               <b>{props.likes}</b>
             </Typography>
@@ -99,7 +99,7 @@ function ProfileSection(props) {
               FOLLOWING
             </Typography>
           </Grid>
-          <Grid item fluid sx={{ textAlign: "center", margin: "auto" }}>
+          <Grid item  sx={{ textAlign: "center", margin: "auto" }}>
             <Typography variant={"h5"}>
               <b>{props.likes}</b>
             </Typography>
@@ -116,8 +116,8 @@ function ProfileSection(props) {
         </Container>
 
         <Box
-          container
-          fluid
+          
+          
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -131,7 +131,7 @@ function ProfileSection(props) {
           }}
         >
           <Box
-            fluid
+            
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -149,7 +149,7 @@ function ProfileSection(props) {
             <Typography variant="subtitle1">Feed</Typography>
           </Box>
           <Box
-            fluid
+            
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -167,7 +167,7 @@ function ProfileSection(props) {
             <Typography>Explore</Typography>
           </Box>
           <Box
-            fluid
+            
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -185,7 +185,7 @@ function ProfileSection(props) {
             <Typography variant="subtitle1">Trending Tags</Typography>
           </Box>
           <Box
-            fluid
+            
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -203,7 +203,7 @@ function ProfileSection(props) {
             <Typography>Top Posts</Typography>
           </Box>
           <Box
-            fluid
+            
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -222,7 +222,7 @@ function ProfileSection(props) {
             <Typography>People</Typography>
           </Box>
           <Box
-            fluid
+            
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -240,7 +240,7 @@ function ProfileSection(props) {
             <Typography>Notifications</Typography>
           </Box>
           <Box
-            fluid
+            
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -258,7 +258,7 @@ function ProfileSection(props) {
             <Typography>Direct</Typography>
           </Box>
           <Box
-            fluid
+            
             sx={{
               display: "flex",
               flexDirection: "row",

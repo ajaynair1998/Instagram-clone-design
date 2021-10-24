@@ -22,8 +22,9 @@ export default function SearchSection(props) {
         }}
       >
         {props.data.map((item) => {
-          return item.name == selectedPerson ? (
+          return item.id == selectedPerson ? (
             <ListItem
+            key={item.id}
               alignItems="flex-start"
               sx={{ bgcolor: "primary.dark" }}
               onClick={() => props.selectPerson(item)}
@@ -48,8 +49,9 @@ export default function SearchSection(props) {
             </ListItem>
           ) : (
             <ListItem
+            key={item.id}
               alignItems="flex-start"
-              onMouseOver={() => selectPerson(item.name)}
+              onMouseOver={() => selectPerson(item.id)}
               onClick={() => props.selectPerson(item)}
             >
               <ListItemAvatar>
