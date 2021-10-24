@@ -13,6 +13,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
+import Skeleton from "@mui/material/Skeleton";
 
 let theme = createTheme({
   palette: {
@@ -46,10 +47,14 @@ export default function Home() {
   let [people, foundPeople] = useState(getRandomTenData());
 
   useEffect(async () => {
-    let users = await getProfilesByName(searchTerm);
-    users = filterOutUsersWithoutName(users.response.results);
-    foundPeople(users);
-    setLoading(false);
+    try {
+      let users = await getProfilesByName(searchTerm);
+      users = filterOutUsersWithoutName(users.response.results);
+      foundPeople(users);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
   }, [searchTerm]);
 
   const selectPerson = (item) => {
@@ -120,6 +125,24 @@ export default function Home() {
                     selectPerson={selectPerson}
                     data={people}
                   />
+                </Grid>
+              )}
+
+              {isLoading && (
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                  sm={6}
+                  lg={3}
+                  sx={{
+                    backgroundColor: "primary.main",
+                    height: "60rem",
+                    display:"flex",
+                    flexDirection:"row"
+                  }}
+                >
+                  
                 </Grid>
               )}
 
