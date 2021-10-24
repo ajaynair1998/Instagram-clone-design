@@ -1,8 +1,9 @@
 import { createApi } from "unsplash-js";
 
+
 const getProfilesByName = async (name) => {
   const unsplash = await createApi({
-    accessKey: "f2fBmpgyhmP2y9pwKQmW9M3Thqe5VTYhe0SBj6a-9lA",
+    accessKey: process.env.NEXT_PUBLIC_API_KEY,
   });
   let users = await unsplash.search.getUsers({
     query: name,
